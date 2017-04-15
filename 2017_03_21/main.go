@@ -6,9 +6,8 @@ import (
 )
 
 func CheckQiniuUrl(link string) bool {
-	// pattern := `[http|https]://[image|video|audio][.]hongbeibang[.]com/.*?`
-	// pattern := "[http|https]://[image|video|audio][\\.]hongbeibang"
-	pattern := `^http(s)?://[image.hongbeibang.com/|video.hongbeibang.com/|audio.hongbeibang.com/]{1}`
+	// pattern := `^http(s)?://[image.hongbeibang.com/|video.hongbeibang.com/|audio.hongbeibang.com/]{1}`
+	pattern := `[http:\/\/|https:\/\/]*www[\.test]*[2]*\.hongbeibang\.com\/live\/[lesson|room|series]+\/\d+`
 	re := regexp.MustCompile(pattern)
 	return re.MatchString(link)
 }
